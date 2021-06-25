@@ -1,6 +1,51 @@
 {
   "version": 1,
   "projects": {
+    "composition-users": {
+      "projectType": "library",
+      "root": "libs/composition/users",
+      "sourceRoot": "libs/composition/users/src",
+      "prefix": "composition-users",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/composition/users"
+          ],
+          "options": {
+            "project": "libs/composition/users/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/composition/users/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/composition/users/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/composition/users"
+          ],
+          "options": {
+            "jestConfig": "libs/composition/users/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/composition/users/src/**/*.ts",
+              "libs/composition/users/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "shell": {
       "projectType": "application",
       "root": "apps/shell",
@@ -9,7 +54,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/shell",
             "index": "apps/shell/src/index.html",
@@ -17,8 +64,13 @@
             "polyfills": "apps/shell/src/polyfills.ts",
             "tsConfig": "apps/shell/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
-            "styles": ["apps/shell/src/styles.scss"],
+            "assets": [
+              "apps/shell/src/favicon.ico",
+              "apps/shell/src/assets"
+            ],
+            "styles": [
+              "apps/shell/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -83,7 +135,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/shell"],
+          "outputs": [
+            "coverage/apps/shell"
+          ],
           "options": {
             "jestConfig": "apps/shell/jest.config.js",
             "passWithNoTests": true
@@ -112,7 +166,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/shell-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/shell-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }

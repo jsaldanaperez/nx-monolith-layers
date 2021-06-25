@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-monolith-layers/composition/users": [
+        "libs/composition/users/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

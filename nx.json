@@ -14,17 +14,31 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
   "projects": {
+    "composition-users": {
+      "tags": [
+        "type:composition"
+      ]
+    },
     "shell": {
-      "tags": []
+      "tags": [
+        "type:app"
+      ]
     },
     "shell-e2e": {
       "tags": [],
-      "implicitDependencies": ["shell"]
+      "implicitDependencies": [
+        "shell"
+      ]
     }
   }
 }

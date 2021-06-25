@@ -1,37 +1,17 @@
 {
   "version": 1,
   "projects": {
-    "composition-users": {
+    "compositions-user-management": {
       "projectType": "library",
-      "root": "libs/composition/users",
-      "sourceRoot": "libs/composition/users/src",
-      "prefix": "composition-users",
+      "root": "libs/compositions/user-management",
+      "sourceRoot": "libs/compositions/user-management/src",
+      "prefix": "compositions-user-management",
       "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/composition/users"
-          ],
-          "options": {
-            "project": "libs/composition/users/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/composition/users/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/composition/users/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/composition/users"
-          ],
+          "outputs": ["coverage/libs/compositions/user-management"],
           "options": {
-            "jestConfig": "libs/composition/users/jest.config.js",
+            "jestConfig": "libs/compositions/user-management/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -39,8 +19,8 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/composition/users/src/**/*.ts",
-              "libs/composition/users/src/**/*.html"
+              "libs/compositions/user-management/src/**/*.ts",
+              "libs/compositions/user-management/src/**/*.html"
             ]
           }
         }
@@ -54,9 +34,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/shell",
             "index": "apps/shell/src/index.html",
@@ -64,13 +42,8 @@
             "polyfills": "apps/shell/src/polyfills.ts",
             "tsConfig": "apps/shell/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/shell/src/favicon.ico",
-              "apps/shell/src/assets"
-            ],
-            "styles": [
-              "apps/shell/src/styles.scss"
-            ],
+            "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
+            "styles": ["apps/shell/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -135,9 +108,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/shell"
-          ],
+          "outputs": ["coverage/apps/shell"],
           "options": {
             "jestConfig": "apps/shell/jest.config.js",
             "passWithNoTests": true
@@ -166,8 +137,293 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["apps/shell-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "user-roles-api": {
+      "projectType": "library",
+      "root": "libs/user-roles/api",
+      "sourceRoot": "libs/user-roles/api/src",
+      "prefix": "nx-monolith-layers",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/user-roles/api"],
+          "options": {
+            "project": "libs/user-roles/api/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/user-roles/api/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/user-roles/api/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/user-roles/api"],
+          "options": {
+            "jestConfig": "libs/user-roles/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "apps/shell-e2e/**/*.{js,ts}"
+              "libs/user-roles/api/src/**/*.ts",
+              "libs/user-roles/api/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "user-roles-domain": {
+      "projectType": "library",
+      "root": "libs/user-roles/domain",
+      "sourceRoot": "libs/user-roles/domain/src",
+      "prefix": "user-roles-domain",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/user-roles/domain"],
+          "options": {
+            "project": "libs/user-roles/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/user-roles/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/user-roles/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/user-roles/domain"],
+          "options": {
+            "jestConfig": "libs/user-roles/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/user-roles/domain/src/**/*.ts",
+              "libs/user-roles/domain/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "user-roles-ui-label": {
+      "projectType": "library",
+      "root": "libs/user-roles/ui-label",
+      "sourceRoot": "libs/user-roles/ui-label/src",
+      "prefix": "user-roles-ui",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/user-roles/ui-label"],
+          "options": {
+            "project": "libs/user-roles/ui-label/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/user-roles/ui-label/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/user-roles/ui-label/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/user-roles/ui-label"],
+          "options": {
+            "jestConfig": "libs/user-roles/ui-label/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/user-roles/ui-label/src/**/*.ts",
+              "libs/user-roles/ui-label/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "users-data-access": {
+      "projectType": "library",
+      "root": "libs/users/data-access",
+      "sourceRoot": "libs/users/data-access/src",
+      "prefix": "users-data-access",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/users/data-access"],
+          "options": {
+            "project": "libs/users/data-access/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/users/data-access/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/users/data-access/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/users/data-access"],
+          "options": {
+            "jestConfig": "libs/users/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/users/data-access/src/**/*.ts",
+              "libs/users/data-access/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "users-domain": {
+      "projectType": "library",
+      "root": "libs/users/domain",
+      "sourceRoot": "libs/users/domain/src",
+      "prefix": "users-domain",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/users/domain"],
+          "options": {
+            "project": "libs/users/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/users/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/users/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/users/domain"],
+          "options": {
+            "jestConfig": "libs/users/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/users/domain/src/**/*.ts",
+              "libs/users/domain/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "users-feature-list": {
+      "projectType": "library",
+      "root": "libs/users/feature-list",
+      "sourceRoot": "libs/users/feature-list/src",
+      "prefix": "users-feature",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/users/feature-list"],
+          "options": {
+            "project": "libs/users/feature-list/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/users/feature-list/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/users/feature-list/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/users/feature-list"],
+          "options": {
+            "jestConfig": "libs/users/feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/users/feature-list/src/**/*.ts",
+              "libs/users/feature-list/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "users-ui-card": {
+      "projectType": "library",
+      "root": "libs/users/ui-card",
+      "sourceRoot": "libs/users/ui-card/src",
+      "prefix": "users-ui",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/users/ui-card"],
+          "options": {
+            "project": "libs/users/ui-card/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/users/ui-card/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/users/ui-card/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/users/ui-card"],
+          "options": {
+            "jestConfig": "libs/users/ui-card/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/users/ui-card/src/**/*.ts",
+              "libs/users/ui-card/src/**/*.html"
             ]
           }
         }

@@ -14,10 +14,28 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "strictPropertyInitialization": false,
     "paths": {
-      "@nx-monolith-layers/composition/users": [
-        "libs/composition/users/src/index.ts"
-      ]
+      "@nx-monolith-layers/compositions/user-management": [
+        "libs/compositions/user-management/src/index.ts"
+      ],
+      "@nx-monolith-layers/user-roles/api": [
+        "libs/user-roles/api/src/index.ts"
+      ],
+      "@nx-monolith-layers/user-roles/domain": [
+        "libs/user-roles/domain/src/index.ts"
+      ],
+      "@nx-monolith-layers/user-roles/ui-label": [
+        "libs/user-roles/ui-label/src/index.ts"
+      ],
+      "@nx-monolith-layers/users/data-access": [
+        "libs/users/data-access/src/index.ts"
+      ],
+      "@nx-monolith-layers/users/domain": ["libs/users/domain/src/index.ts"],
+      "@nx-monolith-layers/users/feature-list": [
+        "libs/users/feature-list/src/index.ts"
+      ],
+      "@nx-monolith-layers/users/ui-card": ["libs/users/ui-card/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

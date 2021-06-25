@@ -26,6 +26,50 @@
                 "onlyDependOnLibsWithTags": [
                   "type:composition"
                 ]
+              },
+              {
+                "sourceTag": "type:composition",
+                "onlyDependOnLibsWithTags": [
+                  "type:feature"
+                ]
+              },
+              {
+                "sourceTag": "type:domain-logic",
+                "onlyDependOnLibsWithTags": []
+              },
+              {
+                "sourceTag": "type:data-access",
+                "onlyDependOnLibsWithTags": [
+                  "type:domain-logic"
+                ]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui",
+                  "type:domain-logic",
+                  "type:data-access"
+                ]
+              },
+              {
+                "sourceTag": "type:api",
+                "onlyDependOnLibsWithTags": [
+                  "type:domain-logic",
+                  "type:ui"
+                ]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": [
+                  "type:domain-logic"
+                ]
+              },
+              {
+                "sourceTag": "composition:user-management",
+                "onlyDependOnLibsWithTags": [
+                  "domain:users",
+                  "domain:user-roles"
+                ]
               }
             ]
           }

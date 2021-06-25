@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, RouterModule.forRoot([
-    { path: 'users', loadChildren: () => import('@nx-monolith-layers/composition/users').then(m => m.CompositionUsersModule) }
+    { path: 'user-management', loadChildren: () => import('@nx-monolith-layers/compositions/user-management').then(m => m.CompositionsUserManagementModule) }
   ])],
   providers: [],
   bootstrap: [AppComponent],

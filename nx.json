@@ -14,31 +14,41 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
   "projects": {
-    "composition-users": {
-      "tags": [
-        "type:composition"
-      ]
+    "compositions-user-management": {
+      "tags": ["composition:user-management", "type:composition"]
     },
     "shell": {
-      "tags": [
-        "type:app"
-      ]
+      "tags": ["type:app"]
     },
     "shell-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "shell"
-      ]
+      "implicitDependencies": ["shell"]
+    },
+    "user-roles-api": {
+      "tags": []
+    },
+    "user-roles-domain": {
+      "tags": ["domain:user-roles", "type:domain-logic"]
+    },
+    "user-roles-ui-label": {
+      "tags": ["domain:user-roles", "type:ui"]
+    },
+    "users-data-access": {
+      "tags": ["domain:users", "type:data-access"]
+    },
+    "users-domain": {
+      "tags": ["domain:users", "type:domain-logic"]
+    },
+    "users-feature-list": {
+      "tags": ["domain:users", "type:feature"]
+    },
+    "users-ui-card": {
+      "tags": ["domain:users", "type:ui"]
     }
   }
 }

@@ -30,10 +30,16 @@
       "implicitDependencies": ["shell"]
     },
     "user-roles-api": {
-      "tags": []
+      "tags": ["domain:user-roles", "type:api"]
+    },
+    "user-roles-data-access": {
+      "tags": ["domain:user-roles", "type:data-access"]
     },
     "user-roles-domain": {
       "tags": ["domain:user-roles", "type:domain-logic"]
+    },
+    "user-roles-feature-list": {
+      "tags": ["domain:user-roles", "type:feature"]
     },
     "user-roles-ui-label": {
       "tags": ["domain:user-roles", "type:ui"]

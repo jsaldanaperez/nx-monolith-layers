@@ -46,6 +46,7 @@
               {
                 "sourceTag": "type:feature",
                 "onlyDependOnLibsWithTags": [
+                  "type:api",
                   "type:ui",
                   "type:domain-logic",
                   "type:data-access"
@@ -55,20 +56,28 @@
                 "sourceTag": "type:api",
                 "onlyDependOnLibsWithTags": [
                   "type:domain-logic",
+                  "type:data-access",
                   "type:ui"
                 ]
               },
               {
                 "sourceTag": "type:ui",
                 "onlyDependOnLibsWithTags": [
-                  "type:domain-logic"
+                  "type:domain-logic",
+                  "type:api"
                 ]
               },
               {
                 "sourceTag": "composition:user-management",
                 "onlyDependOnLibsWithTags": [
+                  "domain:users"
+                ]
+              },
+              {
+                "sourceTag": "domain:users",
+                "onlyDependOnLibsWithTags": [
                   "domain:users",
-                  "domain:user-roles"
+                  "type:api"
                 ]
               }
             ]

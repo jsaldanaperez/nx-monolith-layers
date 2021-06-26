@@ -1,4 +1,4 @@
 <div class="border">
     <strong>Feature</strong>
-    <users-ui-card *ngFor="let user of users$ | async" [user]="user"></users-ui-card>
+    <users-ui-card *ngFor="let user of users" [user]="user" [userRole]="userRoles[user.userRoleId]"></users-ui-card>
 </div>

@@ -22,8 +22,14 @@
       "@nx-monolith-layers/user-roles/api": [
         "libs/user-roles/api/src/index.ts"
       ],
+      "@nx-monolith-layers/user-roles/data-access": [
+        "libs/user-roles/data-access/src/index.ts"
+      ],
       "@nx-monolith-layers/user-roles/domain": [
         "libs/user-roles/domain/src/index.ts"
+      ],
+      "@nx-monolith-layers/user-roles/feature-list": [
+        "libs/user-roles/feature-list/src/index.ts"
       ],
       "@nx-monolith-layers/user-roles/ui-label": [
         "libs/user-roles/ui-label/src/index.ts"

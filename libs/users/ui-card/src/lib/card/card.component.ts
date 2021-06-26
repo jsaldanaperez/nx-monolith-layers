@@ -8,4 +8,5 @@ import { User } from '@nx-monolith-layers/users/domain';
 })
 export class CardComponent {
   @Input() user: User;
+  @Input() userRole: string;
 }

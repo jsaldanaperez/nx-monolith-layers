@@ -9,7 +9,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/compositions/user-management"],
+          "outputs": [
+            "coverage/libs/compositions/user-management"
+          ],
           "options": {
             "jestConfig": "libs/compositions/user-management/jest.config.js",
             "passWithNoTests": true
@@ -34,7 +36,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/shell",
             "index": "apps/shell/src/index.html",
@@ -42,8 +46,13 @@
             "polyfills": "apps/shell/src/polyfills.ts",
             "tsConfig": "apps/shell/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
-            "styles": ["apps/shell/src/styles.scss"],
+            "assets": [
+              "apps/shell/src/favicon.ico",
+              "apps/shell/src/assets"
+            ],
+            "styles": [
+              "apps/shell/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -108,7 +117,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/shell"],
+          "outputs": [
+            "coverage/apps/shell"
+          ],
           "options": {
             "jestConfig": "apps/shell/jest.config.js",
             "passWithNoTests": true
@@ -137,7 +148,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/shell-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/shell-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -150,7 +163,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/user-roles/api"],
+          "outputs": [
+            "dist/libs/user-roles/api"
+          ],
           "options": {
             "project": "libs/user-roles/api/ng-package.json"
           },
@@ -166,7 +181,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/user-roles/api"],
+          "outputs": [
+            "coverage/libs/user-roles/api"
+          ],
           "options": {
             "jestConfig": "libs/user-roles/api/jest.config.js",
             "passWithNoTests": true
@@ -183,6 +200,51 @@
         }
       }
     },
+    "user-roles-data-access": {
+      "projectType": "library",
+      "root": "libs/user-roles/data-access",
+      "sourceRoot": "libs/user-roles/data-access/src",
+      "prefix": "user-roles-data-access",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/user-roles/data-access"
+          ],
+          "options": {
+            "project": "libs/user-roles/data-access/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/user-roles/data-access/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/user-roles/data-access/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/user-roles/data-access"
+          ],
+          "options": {
+            "jestConfig": "libs/user-roles/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/user-roles/data-access/src/**/*.ts",
+              "libs/user-roles/data-access/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "user-roles-domain": {
       "projectType": "library",
       "root": "libs/user-roles/domain",
@@ -191,7 +253,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/user-roles/domain"],
+          "outputs": [
+            "dist/libs/user-roles/domain"
+          ],
           "options": {
             "project": "libs/user-roles/domain/ng-package.json"
           },
@@ -207,7 +271,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/user-roles/domain"],
+          "outputs": [
+            "coverage/libs/user-roles/domain"
+          ],
           "options": {
             "jestConfig": "libs/user-roles/domain/jest.config.js",
             "passWithNoTests": true
@@ -224,6 +290,51 @@
         }
       }
     },
+    "user-roles-feature-list": {
+      "projectType": "library",
+      "root": "libs/user-roles/feature-list",
+      "sourceRoot": "libs/user-roles/feature-list/src",
+      "prefix": "user-roles-feature",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/user-roles/feature-list"
+          ],
+          "options": {
+            "project": "libs/user-roles/feature-list/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/user-roles/feature-list/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/user-roles/feature-list/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/user-roles/feature-list"
+          ],
+          "options": {
+            "jestConfig": "libs/user-roles/feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/user-roles/feature-list/src/**/*.ts",
+              "libs/user-roles/feature-list/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "user-roles-ui-label": {
       "projectType": "library",
       "root": "libs/user-roles/ui-label",
@@ -232,7 +343,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/user-roles/ui-label"],
+          "outputs": [
+            "dist/libs/user-roles/ui-label"
+          ],
           "options": {
             "project": "libs/user-roles/ui-label/ng-package.json"
           },
@@ -248,7 +361,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/user-roles/ui-label"],
+          "outputs": [
+            "coverage/libs/user-roles/ui-label"
+          ],
           "options": {
             "jestConfig": "libs/user-roles/ui-label/jest.config.js",
             "passWithNoTests": true
@@ -273,7 +388,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/users/data-access"],
+          "outputs": [
+            "dist/libs/users/data-access"
+          ],
           "options": {
             "project": "libs/users/data-access/ng-package.json"
           },
@@ -289,7 +406,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/users/data-access"],
+          "outputs": [
+            "coverage/libs/users/data-access"
+          ],
           "options": {
             "jestConfig": "libs/users/data-access/jest.config.js",
             "passWithNoTests": true
@@ -314,7 +433,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/users/domain"],
+          "outputs": [
+            "dist/libs/users/domain"
+          ],
           "options": {
             "project": "libs/users/domain/ng-package.json"
           },
@@ -330,7 +451,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/users/domain"],
+          "outputs": [
+            "coverage/libs/users/domain"
+          ],
           "options": {
             "jestConfig": "libs/users/domain/jest.config.js",
             "passWithNoTests": true
@@ -355,7 +478,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/users/feature-list"],
+          "outputs": [
+            "dist/libs/users/feature-list"
+          ],
           "options": {
             "project": "libs/users/feature-list/ng-package.json"
           },
@@ -371,7 +496,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/users/feature-list"],
+          "outputs": [
+            "coverage/libs/users/feature-list"
+          ],
           "options": {
             "jestConfig": "libs/users/feature-list/jest.config.js",
             "passWithNoTests": true
@@ -396,7 +523,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/users/ui-card"],
+          "outputs": [
+            "dist/libs/users/ui-card"
+          ],
           "options": {
             "project": "libs/users/ui-card/ng-package.json"
           },
@@ -412,7 +541,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/users/ui-card"],
+          "outputs": [
+            "coverage/libs/users/ui-card"
+          ],
           "options": {
             "jestConfig": "libs/users/ui-card/jest.config.js",
             "passWithNoTests": true

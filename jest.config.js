@@ -9,5 +9,7 @@ module.exports = {
     '<rootDir>/libs/user-roles/ui-label',
     '<rootDir>/libs/user-roles/domain',
     '<rootDir>/libs/user-roles/api',
+    '<rootDir>/libs/user-roles/data-access',
+    '<rootDir>/libs/user-roles/feature-list',
   ],
 };

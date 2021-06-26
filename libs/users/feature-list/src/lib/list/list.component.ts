@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserFacadeService } from '@nx-monolith-layers/users/data-access';
 import { UserRolesFacadeService } from '@nx-monolith-layers/user-roles/api';
 import { User } from '@nx-monolith-layers/users/domain';
@@ -11,8 +11,10 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  @Output() clicked = new EventEmitter<string>();
   users: User[] = [];
   userRoles: { [key: string]: string } = {};
+  
 
   constructor(
     private userRoleService: UserRoleService,

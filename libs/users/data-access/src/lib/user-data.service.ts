@@ -9,8 +9,8 @@ export class UserDataService {
 
   search(): Observable<User[]> {
     return of([
-      { email: 'johndo@test.com', fullName: 'John Do', userRoleId: '1' },
-      { email: 'janedo@test.com', fullName: 'Jane Do', userRoleId: '2' }
+      { id: '1', email: 'johndo@test.com', fullName: 'John Do', userRoleId: '1' },
+      { id: '2', email: 'janedo@test.com', fullName: 'Jane Do', userRoleId: '2' }
     ]);
   }
 

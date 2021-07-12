@@ -20,7 +20,7 @@
   },
   "projects": {
     "compositions-user-management": {
-      "tags": ["composition:user-management", "type:composition"]
+      "tags": ["type:composition", "composition:user-management"]
     },
     "shell": {
       "tags": ["type:app"]
@@ -30,7 +30,7 @@
       "implicitDependencies": ["shell"]
     },
     "user-roles-api": {
-      "tags": ["domain:user-roles", "type:api"]
+      "tags": ["domain:user-roles", "domain:user-roles-api", "type:api"]
     },
     "user-roles-data-access": {
       "tags": ["domain:user-roles", "type:data-access"]

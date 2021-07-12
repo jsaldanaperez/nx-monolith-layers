@@ -64,7 +64,7 @@
                 "sourceTag": "type:ui",
                 "onlyDependOnLibsWithTags": [
                   "type:domain-logic",
-                  "type:api"
+                  "type:util"
                 ]
               },
               {
@@ -77,7 +77,7 @@
                 "sourceTag": "domain:users",
                 "onlyDependOnLibsWithTags": [
                   "domain:users",
-                  "type:api"
+                  "domain:user-roles-api"
                 ]
               }
             ]
